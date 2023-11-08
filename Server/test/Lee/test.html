@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  var param = {
+    name: '어린이대상범죄주의구간',
+    serverUrl: 'https://www.safemap.go.kr/sm/apis.do?apikey=[APIKEY]',
+    layername: 'A2SM_ODBLRCRMNLHSPOT_KID',
+    styles: 'A2SM_OdblrCrmnlHspot_Kid'
+  };
+
+  var wmsLayer = new OpenLayers.Layer.WMS(
+    param.name,
+    param.serverUrl,
+    {
+      layers: '' + param.layername,
+      styles: param.styles,
+      format: 'image/png',
+      exceptions: 'text/xml',
+      transparent: true
+    },
+    { isBaseLayer: false }
+  );
+</script>

@@ -253,7 +253,6 @@ class SK_API_CLASS:
         edit_route = self.algorithm(edit_route)
 
         if len(edit_route):
-            print(edit_route)
             edit_route, edit_distance, edit_time = self.apiWalker((startX, startY), (endX, endY), edit_route)
         else:
             edit_route = route

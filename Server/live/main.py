@@ -3,8 +3,21 @@ import time
 
 # https://www.openstreetmap.org/#map=18/36.76577/126.93428
 
-startPoint = (127.27621, 37.00715)  # 순천향대 멀티미디어관
-endPoint = (127.25816, 37.01749)     # 고고쓰 순천향대점
+# 성공 케이스 3: 위험지역, 안전지역 0
+startPoint = (126.7373273, 37.5333124)  # 순천향대 멀티미디어관
+endPoint = (126.744702515, 37.5299942)     # 고고쓰 순천향대점
+centerPoint = (37.5333124, 126.7373273)
+
+
+
+# 성공 케이스 2: 아래쪽 위험 지역이라 위로 피해감
+startPoint = (127.7231824, 37.8808681)  # 순천향대 멀티미디어관
+endPoint = (127.7283043, 37.8780307)     # 고고쓰 순천향대점
+centerPoint = (37.8808967, 127.7232264)     # 순천향대학교
+# 성공 케이스 1: 위험지역 3, 안전지역 0
+startPoint = (126.9884923, 37.5634482)  # 순천향대 멀티미디어관
+endPoint = (126.9884121, 37.5662254)     # 고고쓰 순천향대점
+centerPoint = (37.5662254, 126.9884121)
 
 # 미리 선언 후 속도 향상 기대 90초 -> 30초
 sac = SK_API_CLASS()
@@ -20,12 +33,16 @@ print("Time: ", route_totalTime, "초")
 print("Edit Distance: ", edit_distance, "미터")
 print("Edit Time: ", edit_time, "초")
 
+print(route)
+print()
+print(edit_route)
+
 ##########################################
 
 # 동선 확인을 위한 folium 라이브러리
 import folium
 
-centerPoint = (37.01749, 127.25816)     # 순천향대학교
+
 route = [[y, x] for x, y in route] # 위도 경도 값 리버스, 두 라이브러리가 위도 경도 위치가 다르다.
 edit_route = [[y, x] for x, y in edit_route] # 위도 경도 값 리버스, 두 라이브러리가 위도 경도 위치가 다르다.
 

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xo9=e+l=23sgqwcly%2bhuqcz5ms^g3lq-w2kz-l=i+$rinxs3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # 쪽수 매기기
